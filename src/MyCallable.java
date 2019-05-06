@@ -1,4 +1,6 @@
-public class MyCallable {
+import java.util.concurrent.Callable;
+
+public class MyCallable implements Callable{
 
 	int num;
 	MyCallable(int num)
