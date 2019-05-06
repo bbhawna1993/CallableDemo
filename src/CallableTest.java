@@ -1,10 +1,11 @@
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 public class CallableTest {
 
-	public static void main(String[] args)
+	public static void main(String[] args) throws InterruptedException, ExecutionException
 	{
 		MyCallable[] jobs= {
 				new MyCallable(10),
@@ -18,6 +19,7 @@ public class CallableTest {
 		for(MyCallable job:jobs)
 		{
 			Future f=service.submit(job);
+			//System.out.println(f.get());
 		}
 
 		service.shutdown();
